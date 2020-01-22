@@ -1,0 +1,22 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+  display: flex;
+}
+
+.spacer {
+  flex: 0.9;
+}
+
+mat-form-field {
+  flex: 1;
+}

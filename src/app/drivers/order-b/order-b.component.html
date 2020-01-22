@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form [formGroup]="form" (submit)="onSavePost()" *ngIf="!isLoading">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        readonly="readonly"
+        formControlName="driverName"
+        placeholder="Driver Name">
+
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="driverLocation"
+        readonly="readonly"
+        placeholder="Heading Location ">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="4"
+        formControlName="driverDescription"
+        readonly="readonly"
+        placeholder="Driver Description"></textarea>
+
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit">Done job</button>
+  </form>
+</mat-card>

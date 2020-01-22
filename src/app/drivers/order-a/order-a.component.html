@@ -1,0 +1,47 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form [formGroup]="form" (submit)="onSavePost()" *ngIf="!isLoading">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        readonly="readonly"
+        formControlName="driverName"
+        placeholder="Driver Name">
+      <mat-error *ngIf="form.get('driverName').invalid">Please enter a Driver name</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="driverLocation"
+        readonly="readonly"
+        placeholder="Current Location ">
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="driverLocation"
+        placeholder="Insert Heading Location Here">
+      <mat-error *ngIf="form.get('driverLocation').invalid">Please insert a Driver heading location</mat-error>
+    </mat-form-field>
+    <div>
+      <h3>Insert Pdf file</h3>
+      <input type="file" #filePicker (change)="onDocPicked($event)" >
+    </div>
+
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="4"
+        formControlName="driverDescription"
+        placeholder="Driver Description"></textarea>
+      <mat-error *ngIf="form.get('driverDescription').invalid">Please enter a Driver description</mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit">Save order detail</button>
+  </form>
+</mat-card>
